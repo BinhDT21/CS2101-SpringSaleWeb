@@ -57,9 +57,11 @@ public class ProductRepositoryImpl {
             
             return products;
         }
-//            ProductRepositoryImpl s = new ProductRepositoryImpl();
-//            s.getProducts(null).forEach(p -> System.out.printf("%s - %0.1f - %s\n",
-//                    p.getName(), p.getPrice(), p.getCategory().getName()));
-            
+    }
+    
+    public void addOrUpdate(Product p){
+        try(Session s = HibernateUtils.getFactory().openSession()){
+            s.saveOrUpdate(p);
+        }
     }
 }

@@ -5,7 +5,13 @@
 package com.dtb.hibernatedemo;
 
 import com.dtb.pojo.Category;
+import com.dtb.pojo.Comment;
+import com.dtb.pojo.OrderDetail;
+import com.dtb.pojo.ProdTag;
 import com.dtb.pojo.Product;
+import com.dtb.pojo.SaleOrder;
+import com.dtb.pojo.Tag;
+import com.dtb.pojo.User;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -37,6 +43,14 @@ public class HibernateUtils {
         
         conf.addAnnotatedClass(Category.class);
         conf.addAnnotatedClass(Product.class);
+        conf.addAnnotatedClass(Comment.class);
+        conf.addAnnotatedClass(OrderDetail.class);
+        conf.addAnnotatedClass(ProdTag.class);
+        conf.addAnnotatedClass(SaleOrder.class);
+        conf.addAnnotatedClass(Tag.class);
+        conf.addAnnotatedClass(User.class);
+        
+        
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
         factory = conf.buildSessionFactory(registry);
         
