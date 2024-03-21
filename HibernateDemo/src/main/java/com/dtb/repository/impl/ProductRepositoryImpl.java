@@ -31,6 +31,7 @@ public class ProductRepositoryImpl {
             Root r = q.from(Product.class);
             q.select(r);
             
+            
             List<Predicate> predicates = new ArrayList<>();
             String kw = params.get("kw");
             if(kw!=null && !kw.isEmpty())
@@ -59,6 +60,7 @@ public class ProductRepositoryImpl {
         }
     }
     
+    //thêm , sửa Product
     public void addOrUpdate(Product p){
         try(Session s = HibernateUtils.getFactory().openSession()){
             s.saveOrUpdate(p);

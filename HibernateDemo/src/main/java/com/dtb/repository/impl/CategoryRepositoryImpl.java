@@ -24,7 +24,10 @@ public class CategoryRepositoryImpl {
     
     public Category getCateById (int id){
         try(Session s = HibernateUtils.getFactory().openSession()){
-            return s.get(Category.class, id);        }
+            
+            return s.get(Category.class, id);        
+            
+        }
     }
     
 }
