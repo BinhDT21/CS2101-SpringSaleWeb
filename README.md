@@ -1,2 +1,2 @@
 # CS2101-SpringSaleWeb
-Java 
+Java, Hibernate Framework, ORM 
